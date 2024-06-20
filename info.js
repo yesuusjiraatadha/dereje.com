@@ -22,7 +22,7 @@ window.addEventListener('scroll' ,function (){
         if(scrollpos>section.offsetTop && scrollpos (section.offsetTop+section.offsetHeight)){
             navlinks.forEach(link=>{
                link.classList.remove('active');
-                navbar.classList.remove('active');
+               MenuBtn.classList.remove('active');
                if(section.getAttribute('id')===link.getAttribute('href').substring(1)){
                 link.classList.add('active');
                }
@@ -30,4 +30,10 @@ window.addEventListener('scroll' ,function (){
         }
     });
 
+});
+navlinks.forEach(link => {
+link.addEventListener('click', () => {
+navlinks.forEach(l => l.classList.remove('active'));
+link.classList.add('active');
+});
 });
