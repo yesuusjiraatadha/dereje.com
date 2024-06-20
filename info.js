@@ -11,8 +11,8 @@ MenuBtn.addEventListener('click', function(e) {
     sections.forEach(section =>{
         if(scrollpos>section.offsetTop && scrollpos (section.offsetTop+section.offsetHeight)){
             navlinks.forEach(link=>{
+               this.classList.toggle.remove('fa-xmark');
                link.classList.remove('active');
-               this.classList.toggle('fa-xmak');
                if(section.getAttribute('id')===link.getAttribute('href').substring(1)){
                 link.classList.add('active');
                }
@@ -21,7 +21,12 @@ MenuBtn.addEventListener('click', function(e) {
     });
 
 });
-    
+ navlinks.forEach(link => {
+link.addEventListener('click', () => {
+navlinks.forEach(l => l.classList.remove('active'));
+link.classList.add('active');
+});
+});   
 });
 
 // Typing effect
@@ -34,9 +39,4 @@ let typed = new Typed('.auto-input', {
 });
 
 
-navlinks.forEach(link => {
-link.addEventListener('click', () => {
-navlinks.forEach(l => l.classList.remove('active'));
-link.classList.add('active');
-});
-});
+
