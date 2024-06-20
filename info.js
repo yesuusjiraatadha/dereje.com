@@ -22,7 +22,7 @@ window.addEventListener('scroll' ,function (){
         if(scrollpos>section.offsetTop && scrollpos (section.offsetTop+section.offsetHeight)){
             navlinks.forEach(link=>{
                link.classList.remove('active');
-                MenuBtn.classList.remove('fa-xmark');
+                navbar.classList.remove('active');
                if(section.getAttribute('id')===link.getAttribute('href').substring(1)){
                 link.classList.add('active');
                }
