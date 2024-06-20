@@ -16,6 +16,33 @@ let typed = new Typed('.auto-input', {
 let navbar = document.querySelector('.navbar');
 let sections = document.querySelectorAll('section');
 let navlinks = document.querySelectorAll('nav ul li a');
+window.onscroll = () => {
+    sections.forEach(section => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 100;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if (top >= offset && top < offset + height) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                document.querySelector(`header nav ul li a[href*="${id}"]`).classList.add('active');
+            });
+        }
+    });
+
+    navbar.classList.remove('active');
+    MenuBtn.classList.remove('fa-xmark');
+    
+};
+
+
+
+
+
+
+
+
 window.addEventListener('scroll' ,function (){
     const scrollpos =window.scrollY+20
     sections.forEach(section =>{
