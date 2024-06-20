@@ -6,6 +6,7 @@ let navlinks = document.querySelectorAll('nav ul li a');
 // Toggle navbar visibility on mobile
 MenuBtn.addEventListener('click', () => {
     document.body.classList.toggle('mobile-nav-active');
+     this.classList.toggle('fa-xmark');
 });
 
 // Highlight active section link on scroll
