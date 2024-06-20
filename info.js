@@ -1,4 +1,4 @@
- let MenuBtn = document.getElementById('MenuBtn');
+let MenuBtn = document.getElementById('MenuBtn');
 let navbar = document.querySelector('.navbar');
 let sections = document.querySelectorAll('section');
 let navlinks = document.querySelectorAll('nav ul li a');
@@ -6,7 +6,6 @@ let navlinks = document.querySelectorAll('nav ul li a');
 // Toggle navbar visibility on mobile
 MenuBtn.addEventListener('click', () => {
     document.body.classList.toggle('mobile-nav-active');
-     this.classList.toggle('fa-xmark');
 });
 
 // Highlight active section link on scroll
@@ -32,6 +31,7 @@ navlinks.forEach(link => {
         document.body.classList.remove('mobile-nav-active');
     });
 });
+
 
 
 // Typing effect
