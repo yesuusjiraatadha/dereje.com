@@ -1,8 +1,13 @@
 // Header toggle
 let MenuBtn = document.getElementById('MenuBtn');
 MenuBtn.addEventListener('click', function(e) {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
+  let cond=document.querySelector('body').classList.toggle('mobile-nav-active');
+    if(cond==true){
     this.classList.toggle('fa-xmark');
+    }
+    else{
+        false;
+    }
 });
 
 // Typing effect
