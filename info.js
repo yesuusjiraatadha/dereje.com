@@ -1,13 +1,27 @@
 // Header toggle
 let MenuBtn = document.getElementById('MenuBtn');
+let navbar = document.querySelector('.navbar');
+let sections = document.querySelectorAll('section');
+let navlinks = document.querySelectorAll('nav ul li a');
 MenuBtn.addEventListener('click', function(e) {
   let cond=document.querySelector('body').classList.toggle('mobile-nav-active');
-    if(cond==true){
     this.classList.toggle('fa-xmark');
-    }
-    else{
-        false;
-    }
+  window.addEventListener('scroll' ,function (){
+    const scrollpos =window.scrollY+20
+    sections.forEach(section =>{
+        if(scrollpos>section.offsetTop && scrollpos (section.offsetTop+section.offsetHeight)){
+            navlinks.forEach(link=>{
+               link.classList.remove('active');
+               this.classList.toggle('fa-xmak');
+               if(section.getAttribute('id')===link.getAttribute('href').substring(1)){
+                link.classList.add('active');
+               }
+            }) ; 
+        }
+    });
+
+});
+    
 });
 
 // Typing effect
@@ -18,24 +32,8 @@ let typed = new Typed('.auto-input', {
     backDelay: 2000,
     loop: true
 });
-let navbar = document.querySelector('.navbar');
-let sections = document.querySelectorAll('section');
-let navlinks = document.querySelectorAll('nav ul li a');
-window.addEventListener('scroll' ,function (){
-    const scrollpos =window.scrollY+20
-    sections.forEach(section =>{
-        if(scrollpos>section.offsetTop && scrollpos (section.offsetTop+section.offsetHeight)){
-            navlinks.forEach(link=>{
-               link.classList.remove('active');
-               MenuBtn.classList.remove('active');
-               if(section.getAttribute('id')===link.getAttribute('href').substring(1)){
-                link.classList.add('active');
-               }
-            }) ; 
-        }
-    });
 
-});
+
 navlinks.forEach(link => {
 link.addEventListener('click', () => {
 navlinks.forEach(l => l.classList.remove('active'));
