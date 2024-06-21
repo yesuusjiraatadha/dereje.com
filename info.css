@@ -510,6 +510,7 @@ padding: 50px 15px;
 #resume{
  padding:70px 30px ;
  background-color: white;
+  border:2px solid red;
 
 }
 #resume .resume-row{
